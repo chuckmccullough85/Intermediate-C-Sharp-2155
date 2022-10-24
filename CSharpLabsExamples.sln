@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples", "Examples\Examples.csproj", "{8377883D-1320-4435-97FC-28737B7B7823}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4062EED5-E39B-48DE-898C-E995417B2774}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Labs", "Labs", "{E4524B8C-5F05-4A5F-A9C0-71024C8B077D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions", "Solutions", "{E4DD3CDA-A182-4F3D-94E7-E52E9C0F0F3E}"
@@ -96,7 +94,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D0C427-D51D-42FF-B4F0-6AFE0A0017C5}"
 	ProjectSection(SolutionItems) = preProject
 		LabSequence.txt = LabSequence.txt
-		README.md = README.md
 	EndProjectSection
 EndProject
 Global
@@ -109,10 +106,6 @@ Global
 		{8377883D-1320-4435-97FC-28737B7B7823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8377883D-1320-4435-97FC-28737B7B7823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8377883D-1320-4435-97FC-28737B7B7823}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4062EED5-E39B-48DE-898C-E995417B2774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4062EED5-E39B-48DE-898C-E995417B2774}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4062EED5-E39B-48DE-898C-E995417B2774}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4062EED5-E39B-48DE-898C-E995417B2774}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF0FDD64-9B86-47EF-AFF5-2B7100BA2190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF0FDD64-9B86-47EF-AFF5-2B7100BA2190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF0FDD64-9B86-47EF-AFF5-2B7100BA2190}.Release|Any CPU.ActiveCfg = Release|Any CPU
