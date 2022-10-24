@@ -1,0 +1,2 @@
+﻿
+Console.WriteLine("Deconstruction lab");

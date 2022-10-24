@@ -1,0 +1,55 @@
+<html><head></head><body><h1>Overview</h1>
+<hr>
+<h2>In this lab, we will create a console
+application and a simple class and test code</h2>
+<ol>
+<li>Open Visual Studio Community 2022 and choose <em>Create new Project</em></li>
+<li>In the filters, choose <em>C#</em> and <em>Console</em> <img src="NewProj.png" alt="New Proj"></li>
+<li>Choose a <em>Console</em> application (note - there are 2 project types. .Net Core has multiple platforms while .Net framework is Windows only.  Choose .Net Core projects)</li>
+<li>Name your project <em>FirstLab</em></li>
+<li>Change the name of the solution to <em>Labs</em></li>
+<li>Change the location of the project to whatever folder works best</li>
+<li>Right-click on the new project in the <em>Solution Explorer</em> and choose <em>Add/Class</em></li>
+<li>Name the class <strong>Employee</strong></li>
+</ol>
+<hr>
+<h2>Class Design</h2>
+<ul>
+<li>Change the class to public</li>
+<li>Remove the unneeded <em>usings</em></li>
+<li>Create fields</li>
+</ul>
+<blockquote>
+<blockquote>
+<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>salary</li>
+<li>TAX_RATE  (const)</li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li>Create Properties</li>
+</ul>
+<blockquote>
+<blockquote>
+<ul>
+<li>FirstName</li>
+<li>LastName</li>
+<li>Salary</li>
+<li>YtdGrossPay (auto property, private set)</li>
+<li>HireDate (auto property, <strong>init</strong> instead of <strong>set</strong>)</li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li>Pay Method - calculate taxes, return net.  Increase YtdGrossPay</li>
+<li>Constructor - accept name, salary, and hiredate arguments</li>
+</ul>
+<hr>
+<h2>Main</h2>
+<p>In <em>Program.cs</em> in top-level code, create a sample Employee.
+Set/Get properties
+Pay the employee</p>
+</body></html>
