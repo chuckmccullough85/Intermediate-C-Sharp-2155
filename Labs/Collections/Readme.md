@@ -2,6 +2,14 @@
 In this lab, we will replace our *GenericArrayList*
 with a standard library class.
 
+
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | Collections |
+| Builds On | ExtensionMethods |
+ Time to complete | 30 minutes
+
+
 ## Part 1
 - Delete the source file *GenericArrayList*.  Good riddance!
 - Replace the class in *Company* with *List*

@@ -1,6 +1,12 @@
 ﻿# Inheritance
 In this lab, we will expand the types of people that can be hired, including
 contractors and interns.
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | Inheritance |
+| Builds On | MoqLab |
+| Time to complete | 45 minutes
+
 ## Builds On - Moqlab
 
 ## Overview

@@ -1,6 +1,12 @@
 ﻿# LInQ API
 In this lab, we will experiment with Linq queries on a database of movies.
 
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | LinqApi |
+| Builds On | None |
+| Time to complete | 30 minutes
+
 ## Overview
 The project contains a file *MoviesJson.txt* that contains JSON encoded movie data.  
 Each line in the file contains a movie title, genre, year, rating, and cast.

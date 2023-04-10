@@ -1,16 +1,21 @@
 ﻿# Attributes & Reflection
 In this lab, we will define an attribute and create a tool that extracts information from assemblies
 
-## Creates a new Console Application
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | Reflection |
+| Builds On | None |
+| Time to complete | 30 minutes
+
+1. Create a new Console Applicaton named *Reflection* (or add this project to your solution)
 
 ### Documenter
 - Create a new class named AuthorAttribute - inherits from Attribute
     - Define a constructor parameter accepting a string argument
 ---
- - Create a console application named *Documentor*
- - Create a class named *AuthorDocumentor* that loads the an assembly 
+- Create a class named *AuthorDocumentor* that loads the an assembly 
  and searches for classes attributed with the [Author] attribute.
- - Display the name of the class and the author
+- Display the name of the class and the author
 
 Here is a hint of the documentor class:
 

@@ -1,0 +1,645 @@
+<h2 id="intermediate-c-labs"># Intermediate C# Labs
+<!-- omit in toc --></h2>
+<h2 id="table-of-contents">## Table of Contents
+<!-- omit in toc --></h2>
+<ul>
+<li><a href="#first-lab">First Lab</a></li>
+<li><a href="#literal-strings">Literal Strings</a></li>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#records">Records</a></li>
+<li><a href="#deconstruction">Deconstruction</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#lambda">Lambda</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#linq-api">LInQ API</a></li>
+<li><a href="#linq-query">Linq Query</a></li>
+<li><a href="#attributes--reflection">Attributes &amp;
+Reflection</a></li>
+<li><a href="#collections">Collections</a></li>
+</ul>
+<hr />
+<h1 id="first-lab">First Lab</h1>
+<h2 id="overview">Overview</h2>
+<p>In this lab, we will create a console application and a simple class
+and test code</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>FirstLab</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>20 minutes</td>
+</tr>
+</tbody>
+</table>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>In this lab, we will create a console application and a simple class
+and test code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Open Visual Studio Community 2022 and choose <em>Create new
+Project</em> 1. In the filters, choose <em>C#</em> and <em>Console</em>
+<img src="NewProj.png" alt="New Proj" /> 1. Choose a <em>Console</em>
+application (note - there are 2 project types. .Net Core has multiple
+platforms while .Net framework is Windows only. Choose .Net Core
+projects) 1. Name your project <em>FirstLab</em> 1. Change the name of
+the solution to <em>Labs</em> 1. Change the location of the project to
+whatever folder works best 1. Right-click on the new project in the
+<em>Solution Explorer</em> and choose <em>Add/Class</em> 1. Name the
+class <strong>Employee</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="class-design">Class Design</h2>
+<ul>
+<li>Change the class to public</li>
+<li>Remove the unneeded <em>usings</em></li>
+<li>Create fields
+<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>salary</li>
+<li>TAX_RATE (const)</li>
+</ul></li>
+<li>Create Properties
+<ul>
+<li>FirstName</li>
+<li>LastName</li>
+<li>Salary</li>
+<li>YtdGrossPay (auto property, private set)</li>
+<li>HireDate (auto property, <strong>init</strong> instead of
+<strong>set</strong>)</li>
+</ul></li>
+<li>Pay Method - calculate taxes, return net. Increase YtdGrossPay</li>
+<li><h2
+id="constructor---accept-name-salary-and-hiredate-arguments">Constructor
+- accept name, salary, and hiredate arguments</h2>
+<h2 id="main">Main</h2>
+In <em>Program.cs</em> in top-level code, create a sample Employee.
+Set/Get properties Pay the employee</li>
+</ul>
+<hr />
+<h1 id="literal-strings">Literal Strings</h1>
+<h2 id="overview-1">Overview</h2>
+<p>In this lab, we demonstrate string literals.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>LiteralStrings</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td><a href="../FirstLab">FirstLab</a></td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>10 minutes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ol type="1">
+<li>Override <strong><em>ToString</em></strong> in the <em>Employee</em>
+class</li>
+<li>Return a formatted string containing all important employee
+information.</li>
+<li><h2 id="use-an-interpolated-literal-string-tuples">Use an
+interpolated literal string# Tuples</h2>
+<h1 id="tuples">Tuples</h1>
+<h2 id="overview-2">Overview</h2>
+This independent lab demonstrates various tuple features.</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Tuple</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>## Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>### Formulas</td>
+</tr>
+<tr class="even">
+<td><code>To get K from C, add 273.15 to the C value To get F from C, F = (C x 9/5) + 32 To get C from F, C = (F-32) X 5/9</code></td>
+</tr>
+<tr class="odd">
+<td># Records ## Overview This lab demonstrates the
+<strong>record</strong> type specifier.</td>
+</tr>
+<tr class="even">
+<td>| | | | ——— | ————————— | | Exercise Folder | Records | | Builds On
+| Tuple | | Time to complete | 10 minutes</td>
+</tr>
+<tr class="odd">
+<td>Building on the <em>Tuples</em> lab, define a single record type to
+use for the result of each temperature conversion function. #
+Deconstruction ## Overview In this lab, add deconstructors to the
+<em>Employee</em> class.</td>
+</tr>
+<tr class="even">
+<td>| | | | ——— | ————————— | | Exercise Folder | Deconstruction | |
+Builds On | LiteralStrings | | Time to complete | 30 minutes</td>
+</tr>
+<tr class="odd">
+<td>## Steps 1. Add the following deconstructors to the
+<em>Employee</em> class.</td>
+</tr>
+<tr class="even">
+<td><code>c# public void Deconstruct (out string FullName, out double Salary, out double YtdGross ) public void Deconstruct(out string FirstName, out string LastName, out double Salary, out double YtdGross, out DateTime HireDate)</code>
+2. Update <em>Program.cs</em> to verify the deconstructors# xUnit Intro
+## Overview In this lab, we get started with xUnit. Using TDD process,
+we will define some new capabilities in the <em>Employee</em>
+class.</td>
+</tr>
+<tr class="odd">
+<td>| | | | ——— | ————————— | | Exercise Folder | xUnitIntro | | Builds
+On | Deconstruction | | Time to complete | 40 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps">Steps</h2>
+<ol type="1">
+<li>Create a new xUnit project in your solution <img src="xunit.png"
+alt="Xunit" /></li>
+<li>Copy <em>Employee.cs</em> from the last project into this
+project</li>
+<li>Rename the initial file (UnitTest1.cs) to <em>EmployeeTest.cs</em>
+and change the class name to <em>EmployeeTest</em></li>
+</ol>
+<p>We want to define a new property in the Employee class</p>
+<ol start="4" type="1">
+<li><p>Tenure - a read-only int property that calculates the number of
+years the employee has been employed</p></li>
+<li><p>Update the Pay() method as follows:</p>
+<ul>
+<li>If the employee’s tenure is &gt;= 5 years, their pay is increased by
+2% from their base salary</li>
+<li>Create the test first! For this scenario, a <strong>Theory</strong>
+is probably the best choice.</li>
+</ul></li>
+</ol>
+<pre class="cs\#"><code>[Theory]
+[InlineData(6, 100.0, 94.2)]
+[InlineData(0, 100.0, 92.35)]
+[InlineData(3, 200.0, 184.7)]
+public void TestPay(int tenure, double sal, double pay)
+{</code></pre>
+<h1 id="exceptions">Exceptions</h1>
+<h2 id="overview-3">Overview</h2>
+<p>In this lab, we will specify boundaries on the Employee properties
+and behaviors by specifying expected exceptions. This lab builds on the
+xUnit lab.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Exceptions</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>xUnitIntro</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="steps-1">Steps</h2>
+<ol type="1">
+<li>Add tests that expect exceptions to verify the following rules
+<ul>
+<li>An employee’s first and last name must be at least 1 character in
+length and a max of 30. Only alpha, spaces, dash, apostrophes
+allowed</li>
+<li>An employee’s salary must be between 50 and 500 inclusive</li>
+<li>An employee’s hire date must be in the past</li>
+</ul></li>
+<li>Run the test to verify failure</li>
+<li>Modify <em>Employee</em> to satisfy the tests# Generics Exercise ##
+Overview In this code exercise, you will convert a regular class into a
+generic.</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Generics</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>20 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps-2">Steps</h2>
+<ol type="1">
+<li>Add Generics.csproj to your current solution</li>
+<li>All tests should succeed</li>
+<li>Review the code for the class ObjectArrayList .</li>
+<li>Change the name of the class to GenericArrayList</li>
+<li>Convert the class to a generic by lifting the object type from the
+class, replacing with a generic parameter</li>
+<li>Update the test class to utilize the generic</li>
+<li>Re-run tests# Delegates</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Delegates</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>Exceptions</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overview-4">Overview</h2>
+<p>Our customer has identified an additional requirement (imagine
+that!).</p>
+<p>Some employees are in regions (state, province or city) that imposes
+an additional income tax.</p>
+<p>In order to handle this scenario, the designer decided to add a
+delegate to the Employee class that can be called to obtain the
+additional local tax.</p>
+<p>The signature of the delegate is
+<code>double func(double amt)</code>. The gross amount being paid is
+passed in and the local tax is returned.</p>
+<p>Here’s what you need to do for this lab: - Use this project as a
+starting point, or build on <em>Exceptions</em> - Add the tests below to
+EmployeeTest - Add a delegate definition to Employee.cs that returns a
+double and accepts a double as an argument - Add a property to
+Employee.cs named LocalTaxMethod that is of the delegate type - In
+Pay(amt), modify so that if there is a LocalTaxMethod, it is called and
+its result is added to the tax</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">NullLocalTaxTest</span><span class="op">()</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;Hank&quot;</span><span class="op">,</span> <span class="st">&quot;Hill&quot;</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> DateTime<span class="op">.</span><span class="fu">Now</span><span class="op">.</span><span class="fu">AddYears</span><span class="op">(-</span><span class="dv">5</span><span class="op">).</span><span class="fu">AddDays</span><span class="op">(-</span><span class="dv">10</span><span class="op">));</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">LocalTaxMethod</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">Pay</span><span class="op">();</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">LocalTaxCalledTest</span><span class="op">()</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;Hank&quot;</span><span class="op">,</span> <span class="st">&quot;Hill&quot;</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> DateTime<span class="op">.</span><span class="fu">Now</span><span class="op">.</span><span class="fu">AddYears</span><span class="op">(-</span><span class="dv">5</span><span class="op">).</span><span class="fu">AddDays</span><span class="op">(-</span><span class="dv">10</span><span class="op">));</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">bool</span> called <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">LocalTaxMethod</span> <span class="op">=</span> <span class="op">(</span>amt<span class="op">)</span> <span class="op">=&gt;</span> <span class="op">{</span> called <span class="op">=</span> <span class="kw">true</span><span class="op">;</span> <span class="kw">return</span> <span class="dv">0</span><span class="op">;</span> <span class="op">};</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">Pay</span><span class="op">();</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    Assert<span class="op">.</span><span class="fu">True</span><span class="op">(</span>called<span class="op">);</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>Fact<span class="op">]</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">LocalTaxAddedTest</span><span class="op">()</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="fu">Employee</span><span class="op">(</span><span class="st">&quot;Hank&quot;</span><span class="op">,</span> <span class="st">&quot;Hill&quot;</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> DateTime<span class="op">.</span><span class="fu">Now</span><span class="op">.</span><span class="fu">AddYears</span><span class="op">(-</span><span class="dv">5</span><span class="op">).</span><span class="fu">AddDays</span><span class="op">(-</span><span class="dv">10</span><span class="op">));</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">var</span> nt <span class="op">=</span> e<span class="op">.</span><span class="fu">Pay</span><span class="op">();</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">LocalTaxMethod</span> <span class="op">=</span> <span class="op">(</span>amt<span class="op">)</span> <span class="op">=&gt;</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    Assert<span class="op">.</span><span class="fu">Equal</span><span class="op">(</span>nt <span class="op">-</span> <span class="dv">10</span><span class="op">,</span> e<span class="op">.</span><span class="fu">Pay</span><span class="op">(),</span> <span class="dv">2</span><span class="op">);</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h1 id="events">Events</h1>
+<h2 id="overview-5">Overview</h2>
+<p>In this lab, we will add an event to the Employee class. This lab
+builds on the <em>Delegate</em> lab.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Events</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>Delegates</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps-3">Steps</h2>
+<ul>
+<li>Add a delegate to <em>Employee</em>
+<code>void NotifyPay(Employee emp, double net)</code></li>
+<li>Define an event to notify clients when the employee is paid</li>
+<li>Design unit tests</li>
+<li>Implement the feature in <em>Pay()</em></li>
+</ul>
+<h1 id="lambda">Lambda</h1>
+<h2 id="overview-6">Overview</h2>
+<p>Convert private delegate methods into lambdas.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>Lambda</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>Events</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>10 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps-4">Steps</h2>
+<ul>
+<li>Replace the private methods/variables in the <em>EmployeeTest</em>
+with lambda expressions.# Moq ## Overview We will create a class to
+represent <em>Company</em> and use mocks to decouple employees from the
+company for testing.</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td>Exercise Folder</td>
+<td>MoqLab</td>
+</tr>
+<tr class="even">
+<td>Builds On</td>
+<td>Lambda</td>
+</tr>
+<tr class="odd">
+<td>Time to complete</td>
+<td>30 minutes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="steps-5">Steps</h2>
+<ol type="1">
+<li>Continue with your last project
+<ul>
+<li>copy source files from the generic project if needed</li>
+</ul></li>
+<li>Using Nuget, search and install Moq</li>
+<li>Create a new class named <em>CompanyTest</em></li>
+<li>Create a new class named <em>Company</em></li>
+<li>Using the <em>Quick Refactorings Tool (screwdriver)</em> extract the
+interface</li>
+<li><em>IEmployee</em> from the class <strong>Employee</strong>
+<ul>
+<li>Note - exclude the deconstructors</li>
+</ul></li>
+<li>Design tests to specify the behavior of the new <em>Company</em>
+class
+<ul>
+<li><em>CompanyTest Constructor</em>:
+<ul>
+<li>Create a new company with a name and id; stash in an instance
+variable.</li>
+<li>Create 2 or 3 mock IEmployee objects - stash in instance
+variables</li>
+</ul></li>
+<li><em>TestCompanyHire</em> create a test to hire and verify that the
+employees where hired</li>
+<li><em>TestCompanyPay</em> create a test to hire and pay employees -
+verify that they are paid</li>
+<li>Verify that the tests fail</li>
+</ul></li>
+<li><h2 id="implement-company-so-that-tests-pass">Implement
+<em>Company</em> so that tests pass</h2></li>
+</ol>
+<p>The initial <em>Company</em> class is shown below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Company</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Company</span><span class="op">(</span><span class="dt">string</span> name<span class="op">,</span> <span class="dt">string</span> taxId<span class="op">)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">NotImplementedException</span><span class="op">();</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> Name <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> TaxId <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> GenericArrayList<span class="op">&lt;</span>IEmployee<span class="op">&gt;</span> Employees <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">Hire</span><span class="op">(</span>IEmployee emp<span class="op">)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">NotImplementedException</span><span class="op">();</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">Pay</span><span class="op">()</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">throw</span> <span class="kw">new</span> <span class="fu">NotImplementedException</span><span class="op">();</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h1 id="inheritance">Inheritance</h1>
+<p>In this lab, we will expand the types of people that can be hired,
+including contractors and interns. ## Builds On - Moqlab</p>
+<h2 id="overview-7">Overview</h2>
+<ul>
+<li>Define new classes
+<ul>
+<li><em>Contractor</em> - contractors make a fixed rate X 50 hours</li>
+<li><em>Intern</em> - interns are always paid a stipend of $50</li>
+<li><em>HumanResource</em> - the base class for contractors, interns,
+and employees</li>
+</ul></li>
+<li>Define tests for the new classes</li>
+<li>Update Company to contain <em>Human Resource</em> objects</li>
+</ul>
+<h2 id="steps-6">Steps</h2>
+<ol type="1">
+<li>Create new classes, <em>HumanResource, Company, Intern</em></li>
+<li>Change <em>Employee</em> to inherit from <em>HumanResource</em></li>
+<li>Pull up from <em>Employee</em> to <em>HumanResource</em> the common
+fields and properties
+<ul>
+<li>first and last name</li>
+<li>Hiredate</li>
+<li>YtdGrossPay</li>
+</ul></li>
+<li>Define <em>Pay</em> as a abstract method in
+<em>HumanResource</em></li>
+<li>Define a constructor in <em>HumanResource</em> taking first and last
+name as parameters</li>
+<li>Fix up Employee class</li>
+<li>Change <em>Contractor</em> and <em>Intern</em> to inherit from
+<em>HumanResource</em></li>
+<li>Re-run unit tests - company and employee tests should still
+succeed</li>
+<li>Create new classes <em>ContractorTest &amp; InternTest</em>
+<ul>
+<li>implement tests to specify <em>Pay</em> results</li>
+<li>verify new tests fail</li>
+<li>implement <em>Intern &amp; Contractor</em> so that tests pass</li>
+</ul></li>
+<li>Update <em>CompanyTest</em> to mock <em>HumanResource</em> rather
+than <em>IEmployee</em></li>
+<li>Update <em>Company</em> to contain <em>HumanResource</em>
+objects</li>
+</ol>
+<h1 id="interfaces">Interfaces</h1>
+<p>In this lab, we eliminate the fat-interface smell with
+<em>Company</em>’s dependency on <em>HumanResource</em>. We will also
+implement the <a
+href="https://en.wikipedia.org/wiki/Composite_pattern"><em>Composite
+Pattern</em></a> ## Builds On - Inheritance ## Overview Determine
+<em>Company</em>’s dependency and design an interface that contains the
+exact methods/properties required by company. Replace <em>Company</em>’s
+dependency on <em>HumanResource</em> with the new interface type.</p>
+<p>Also, we will allow companies to be nested within companies.</p>
+<h2 id="steps-7">Steps</h2>
+<ol type="1">
+<li>Create a new interface named <em>IPayable</em>
+<ul>
+<li>single method: <em>void Pay()</em></li>
+</ul></li>
+<li>Add <em>IPayable</em> to the <em>HumanResource</em> base list
+<ul>
+<li>is there any purpose in <em>IEmployee</em> any more?</li>
+</ul></li>
+<li>Modify <em>Company</em> replacing all occurances of
+<em>HumanResource</em> with <em>IPayable</em></li>
+<li>Update <em>CompanyTest</em> - change mocks</li>
+</ol>
+<p>The composite pattern is an elegant pattern that will greatly
+increase the functionality of our application. How can we adjust the
+design so that companies can contain companies?# Extension Methods In
+this lab, we create an extension to the string class. ## Builds On -
+Interfaces ## Overview The <strong>Java</strong> string class has a cool
+method named <strong>Matches</strong> This method takes a regular
+expression as a parameter and returns a true if the string matches the
+expression and false if it doesn’t.</p>
+<p>Let’s take that a step further and add a method to the string class
+to <em>Validate</em> a string with a regular expression.</p>
+<p>Add a class to the <em>Interfaces</em> project named
+<em>Extensions</em>. Change the class to <code>public static</code>
+Define a static bool extension method named <em>Validate</em>. The first
+<strong>this</strong> argument is a string (extending string class) and
+the second is a regular expression. If the string doesn’t start with a ^
+and/or end with a $, add them. Return true if this string matches the
+regex or false if it doesn’t</p>
+<p>Update the validation methods in <em>HumanResource</em> to use the
+extension method.</p>
+<h1 id="linq-api">LInQ API</h1>
+<p>In this lab, we will experiment with Linq queries on a database of
+movies.</p>
+<h2 id="overview-8">Overview</h2>
+<p>The project contains a file <em>MoviesJson.txt</em> that contains
+JSON encoded movie data.<br />
+Each line in the file contains a movie title, genre, year, rating, and
+cast. Review the file <em>MovieDb.cs</em>. This class deserializes the
+data into a list of <em>Movie</em> objects. &gt; Note - the properties
+of <em>MoviesJson.txt</em> are set to copy the file to the output folder
+so that it is in the same directory as the application .exe.</p>
+<h2 id="lab">Lab</h2>
+<p>In the top-level statements (<em>Program.cs</em>) experiment with
+queries</p>
+<ul>
+<li>How many movies did your favorite movie star appear in?</li>
+<li>What is the oldest movie with your star?</li>
+<li>What is the most recent?</li>
+<li>Did your favorite star appear in any movies with another
+favorite?</li>
+<li>Create a new list of just G rated movies with just the title, year,
+and first cast member</li>
+<li>etc…</li>
+</ul>
+<h1 id="linq-query">Linq Query</h1>
+<p>Modify your code from the previous lab to use Linq Query ## Builds on
+Linq API # Attributes &amp; Reflection In this lab, we will define an
+attribute and create a tool that extracts information from
+assemblies</p>
+<h2 id="creates-a-new-console-application">Creates a new Console
+Application</h2>
+<h3 id="documenter">Documenter</h3>
+<ul>
+<li>Create a new class named AuthorAttribute - inherits from Attribute
+<ul>
+<li><h2
+id="define-a-constructor-parameter-accepting-a-string-argument">Define a
+constructor parameter accepting a string argument</h2></li>
+</ul></li>
+<li>Create a console application named <em>Documentor</em></li>
+<li>Create a class named <em>AuthorDocumentor</em> that loads the an
+assembly and searches for classes attributed with the [Author]
+attribute.</li>
+<li>Display the name of the class and the author</li>
+</ul>
+<p>Here is a hint of the documentor class:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c#"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> AuthorDocumenter</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">AuthorDocumenter</span><span class="op">(</span><span class="dt">string</span> assemblyPath<span class="op">)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        AssemblyPath <span class="op">=</span> assemblyPath<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">string</span> AssemblyPath <span class="op">{</span> <span class="kw">get</span><span class="op">;</span> <span class="kw">set</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">Scan</span><span class="op">()</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> assembly <span class="op">=</span> System<span class="op">.</span><span class="fu">Runtime</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">Loader</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">AssemblyLoadContext</span><span class="op">.</span><span class="fu">Default</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">LoadFromAssemblyPath</span><span class="op">(</span>AssemblyPath<span class="op">);</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">var</span> types <span class="op">=</span> assembly<span class="op">.</span><span class="fu">GetTypes</span><span class="op">()</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">Where</span><span class="op">(</span>t <span class="op">=&gt;</span> t<span class="op">.</span><span class="fu">IsDefined</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>AuthorAttribute<span class="op">)));</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">foreach</span> <span class="op">(</span><span class="dt">var</span> t <span class="kw">in</span> types<span class="op">)</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="op">...</span></span></code></pre></div>
+<h2 id="previous-lab">Previous lab</h2>
+<ul>
+<li>In a previous lab, add the <em>Documenter</em> project as a
+dependency</li>
+<li>Mark some classes with the [Author] attribute</li>
+</ul>
+<p>Run the documenter, passing the assembly name of the project
+containing attributes. # Collections In this lab, we will replace our
+<em>GenericArrayList</em> with a standard library class.</p>
+<h2 id="part-1">Part 1</h2>
+<ul>
+<li>Delete the source file <em>GenericArrayList</em>. Good
+riddance!</li>
+<li>Replace the class in <em>Company</em> with <em>List</em></li>
+<li>Change the <em>Pay</em> method to utilize <strong>Linq</strong></li>
+</ul>
+<h2 id="part-2">Part 2</h2>
+<p>New requirement - we want to prevent duplicate hires - Create a new
+test to specify that if the same employee is hired more than once, only
+one will be hired - do this for the same object (reference) and for
+different, equal employees - note - we don’t need to test .Net
+collections, but we do want to specify that the payables are compatible
+with hash sets and sorted sets</p>

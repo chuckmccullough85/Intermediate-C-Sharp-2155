@@ -1,6 +1,13 @@
 ﻿# Persisting Payroll
 In this lab, we will modify our payroll system to support the database.
 
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | EFPayroll |
+| Builds On | Collections |
+ Time to complete | 60 minutes
+
+
 ## Entity framework
 Add these packages to your project via NuGet
 - Microsoft.EntityFrameworkCore

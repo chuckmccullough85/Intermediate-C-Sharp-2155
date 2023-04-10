@@ -1,7 +1,13 @@
 ﻿# Interfaces
 In this lab, we eliminate the fat-interface smell with *Company*'s dependency on *HumanResource*.
 We will also implement the [ *Composite Pattern* ](https://en.wikipedia.org/wiki/Composite_pattern)
-## Builds On - Inheritance
+
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | Interface |
+| Builds On | Inheritance |
+| Time to complete | 30 minutes
+
 ## Overview
 Determine *Company*'s dependency and design an interface that contains the exact methods/properties 
 required by company.  Replace *Company*'s dependency on *HumanResource* with the new interface type.

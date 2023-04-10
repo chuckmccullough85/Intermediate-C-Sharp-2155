@@ -1,6 +1,12 @@
 ﻿# Extension Methods
 In this lab, we create an extension to the string class.
-## Builds On - Interfaces
+
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | ExtensionMethods |
+| Builds On | Interfaces |
+ Time to complete | 30 minutes
+
 ## Overview
 The **Java** string class has a cool method named **Matches**
 This method takes a regular expression as a parameter and returns a true

@@ -20,7 +20,6 @@
 1. [Attributes & Reflection](Reflection)
 1. [Collections](Collections)
 1. Entity Framework
-	1. [Entity Framework](EFIntro)
 	1. [Persisting Payroll with EF]
 1. ASP.Net MVC
     1. [Company View Mockups]
