@@ -3,15 +3,13 @@
     public class Company : Payable
     {
         public Company()
-        {
-
-        }
+        { }
         public Company(string name, string taxId)
         {
             Name = name;
             TaxId = taxId;
         }
-        public int Id { get; set; }
+
         public string Name { get; set; }
         public string TaxId { get; set; }
         public virtual ICollection<Payable> Resources 

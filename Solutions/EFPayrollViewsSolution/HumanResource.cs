@@ -44,6 +44,7 @@ namespace EFPayroll
             get; protected set;
         }
         public DateTime HireDate { get; init; }
+        
         [NotMapped]
         public int Tenure
         {

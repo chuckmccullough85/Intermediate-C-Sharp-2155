@@ -1,10 +1,4 @@
-﻿using EFPayroll;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace EFPayroll
 {
@@ -15,9 +9,9 @@ namespace EFPayroll
         public PayDbContext(DbContextOptions<PayDbContext> opt)
             : base(opt) { }
 
-        public DbSet<Company> Companies => Set<Company>();
-        public DbSet<Employee> Employees => Set<Employee>();
-        public DbSet<Contractor> Contractors => Set<Contractor>();
+        public DbSet<Company> Companies { get; set;}
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Contractor> Contractors { get; set; }
         public DbSet<Intern> Interns => Set<Intern>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder opts)

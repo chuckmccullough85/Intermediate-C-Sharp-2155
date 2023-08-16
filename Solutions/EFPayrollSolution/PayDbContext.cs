@@ -39,6 +39,8 @@ namespace EFPayroll
             builder.Entity<Employee>().ToTable("Employees");
             builder.Entity<Contractor>().ToTable("Contractors");
             builder.Entity<Intern>().ToTable("Interns");
+            builder.Entity<HumanResource>().Ignore(hr => hr.Tenure);
+
             base.OnModelCreating(builder);
         }
 

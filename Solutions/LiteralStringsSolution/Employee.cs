@@ -45,8 +45,10 @@
 
         public override string ToString()
         {
-            return $@"An Employee, {LastName}, {FirstName} with a Salary of {Salary:c}
-has made {YtdGrossPay:c}.  {FirstName} was hired on {HireDate:D}";
+            return $"""
+                An Employee, {LastName}, {FirstName} with a Salary of {Salary:c}
+                has made {YtdGrossPay:c}.  {FirstName} was hired on {HireDate:D}
+                """;
         }
 
     }
