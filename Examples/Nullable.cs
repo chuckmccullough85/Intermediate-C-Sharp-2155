@@ -7,7 +7,12 @@ namespace Examples
 
         public void Init()
         {
-            myName = "Hello";
+            Example(myName!);
+        }
+
+        public void Example(string text)
+        {
+            Console.WriteLine(text);
         }
 
         public void Func()

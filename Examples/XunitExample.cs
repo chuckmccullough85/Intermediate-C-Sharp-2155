@@ -14,7 +14,6 @@ namespace Examples
             var today = DateTime.Now;
             var yesterday = today.AddDays(-1);
             Assert.True(today > yesterday);
-            Assert.
         }
     }
 }
