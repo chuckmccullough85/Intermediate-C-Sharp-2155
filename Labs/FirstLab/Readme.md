@@ -53,13 +53,13 @@ Pay the employee
 
 ---
 
+
+
 <details>
 <summary>Need a hint?</summary>
 
-```c#
-
 *Employee.cs*
-```c#
+```csharp
 namespace FirstLab
 {
     public class Employee
@@ -108,7 +108,7 @@ namespace FirstLab
 }
 ```
 *Program.cs*
-```c#
+```csharp
 Employee e = new("Hank", "Hill", 200, DateTime.Today);
 
 e.Pay();
@@ -117,4 +117,6 @@ e.Pay();
 Console.WriteLine("{0} has made {1:c} so far this year",
     e.FirstName, e.YtdGrossPay);
 ```
+
+
 </details>
