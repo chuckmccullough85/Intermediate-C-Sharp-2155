@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Company Home";
+}
+
+<h1>Hello Company!</h1>
+
+<ul>
+    @foreach (IdValue v in ViewBag.Companies)
+    {
+        <li>
+            <a href="/Company/Detail/@v.Id">@v.Value</a>
+        </li>
+    }
+</ul>
+

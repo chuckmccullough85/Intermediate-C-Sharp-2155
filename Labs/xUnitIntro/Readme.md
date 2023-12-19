@@ -27,7 +27,7 @@ has been employed
 	base salary
 	- Create the test first!  For this scenario, a **Theory** is probably the best choice.
  
-```cs\#
+```csharp
 [Theory]
 [InlineData(6, 100.0, 94.2)]
 [InlineData(0, 100.0, 92.35)]

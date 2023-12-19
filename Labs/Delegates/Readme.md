@@ -22,7 +22,7 @@ Here's what you need to do for this lab:
 - Add a delegate definition to Employee.cs that returns a double and accepts a double as an argument
 - Add a property to Employee.cs named LocalTaxMethod that is of the delegate type
 - In Pay(amt), modify so that if there is a LocalTaxMethod, it is called and its result is added to the tax
-```c#
+```csharp
 [Fact]
 public void NullLocalTaxTest()
 {

@@ -12,7 +12,7 @@ In this lab, we will modify our payroll system to support the database.
 Add these packages to your project via NuGet
 - Microsoft.EntityFrameworkCore
 - Microsoft.EntityFrameworkCore.SqlServer
-- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.EntityFrameworkCore.Tools (optional)
 - Microsoft.EntityFrameworkCore.Proxies
 
 ## Model Updates
@@ -49,7 +49,7 @@ Rename *IPayable* to *Payable*
 - create migration
 - update database
 
-```c#
+```csharp
 public class PayDbContext : DbContext
 {
     public PayDbContext()
@@ -79,7 +79,7 @@ public class PayDbContext : DbContext
 Add a new class for testing the database.
 See below for a simple test class.
 
-```c#
+```csharp
 public class CompanyDbTest : IDisposable
 {
     PayDbContext ctx;

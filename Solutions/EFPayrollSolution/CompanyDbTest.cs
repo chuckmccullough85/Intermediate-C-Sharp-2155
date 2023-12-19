@@ -35,6 +35,8 @@ namespace EFPayroll
             c1.Hire(ctr);
             c1.Hire(intern);
             ctx.Companies.Add(c1);
+            ctx.Companies.Add(new Company("Strickland Propane", "98-7654"));
+            ctx.Companies.Add(new Company("Rainey Street", "12-3456"));
             ctx.SaveChanges();
         }
     }

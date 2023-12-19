@@ -19,7 +19,7 @@ In this lab, we will define an attribute and create a tool that extracts informa
 
 Here is a hint of the documentor class:
 
-```c#
+```csharp
 public class AuthorDocumenter
 {
     public AuthorDocumenter(string assemblyPath)

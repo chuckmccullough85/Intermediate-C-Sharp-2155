@@ -31,7 +31,7 @@ employees from the company for testing.
 ---
 
 The initial *Company* class is shown below:
-```c#
+```csharp
 public class Company
 {
     public Company(string name, string taxId)
