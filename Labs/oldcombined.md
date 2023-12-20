@@ -1,3 +1,24 @@
+# Intermediate C# Labs <!-- omit in toc -->
+---
+## Table of Contents <!-- omit in toc -->
+---
+- [First Lab](#first-lab)
+- [Literal Strings](#literal-strings)
+- [Tuples](#tuples)
+- [Records](#records)
+- [Deconstruction](#deconstruction)
+- [Exceptions](#exceptions)
+- [Events](#events)
+- [Lambda](#lambda)
+- [Inheritance](#inheritance)
+- [Interfaces](#interfaces)
+- [LInQ API](#linq-api)
+- [Linq Query](#linq-query)
+- [Attributes & Reflection](#attributes--reflection)
+- [Collections](#collections)
+
+---
+
 # First Lab
 ## Overview
 In this lab, we will create a console application and a simple class and test code 
@@ -6,30 +27,22 @@ In this lab, we will create a console application and a simple class and test co
 | --------- | --------------------------- |
 | Exercise Folder | FirstLab |
 | Builds On | None |
-| Time to complete | 30 minutes
+| Time to complete | 20 minutes
 
 ---
-### Setup VS Community 2022
-
-1. Open Visual Studio Community 2022 and choose *Create new Project* 
-1. In the filters, choose *C#* and *Console*
-1. Choose a *Console* application (note - there are 2 project types. .Net Core has multiple platforms while .Net framework is Windows only.  Choose .Net Core projects)  ![console](/api/User/Image/2)
+In this lab, we will create a console
+application and a simple class and test code
+---
+1. Open Visual Studio Community 2022 and choose *Create new Project*
+1. In the filters, choose *C#* and *Console* ![New Proj](NewProj.png)
+1. Choose a *Console* application (note - there are 2 project types. .Net Core has multiple platforms while .Net framework is Windows only.  Choose .Net Core projects)
 1. Name your project *FirstLab*
 1. Change the name of the solution to *Labs*
 1. Change the location of the project to whatever folder works best
 1. Right-click on the new project in the *Solution Explorer* and choose *Add/Class*
 1. Name the class **Employee**
 ---
-
-### Setup VS Code
-1. Create a folder for your project (named *FirstLab*)
-1. Open a terminal and navigate to the folder
-1. Run `dotnet new console`
-1. Run `code .` to open the folder in VS Code
-1. Add a file to the project named *Employee.cs*
-
-
-### Class Design
+## Class Design
  
 - Change the class to public
 - Remove the unneeded *usings*
@@ -47,79 +60,13 @@ In this lab, we will create a console application and a simple class and test co
 - Pay Method - calculate taxes, return net.  Increase YtdGrossPay
 - Constructor - accept name, salary, and hiredate arguments
 ---
-### Main
+## Main
 In *Program.cs* in top-level code, create a sample Employee.
 Set/Get properties
 Pay the employee
 
 ---
 
-<details>
-<summary>Need a hint?</summary>
-
-*Employee.cs*
-
-```csharp
-namespace FirstLab;
-
-public class Employee
-{
-    private const double TAX_RATE = .0765;
-    private string firstName = "";
-    private string lastName = "";
-    private double salary = 0;
-
-    public Employee(string firstName, string lastName, double salary, DateTime hireDate)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-        Salary = salary;
-        YtdGrossPay = 0;
-        HireDate = hireDate;
-    }
-    public string FirstName
-    {
-        get { return firstName; }
-        set { firstName = value; }
-    }
-    public string LastName
-    {                       // expression body example
-        get => lastName;
-        set => lastName = value;
-    }
-
-    public double Salary
-    {
-        get => salary;
-        set => salary = value;
-    }
-    public double YtdGrossPay
-    {
-        get; private set;
-    }
-    public DateTime HireDate { get; init; }
-
-    public double Pay()
-    {
-        YtdGrossPay += Salary;
-        return Salary - Salary * TAX_RATE;
-    }
-
-}
-
-```
-*Program.cs*
-```csharp
-Employee e = new("Hank", "Hill", 200, DateTime.Today);
-
-e.Pay();
-e.Pay();
-
-Console.WriteLine("{0} has made {1:c} so far this year",
-    e.FirstName, e.YtdGrossPay);
-```
-</details>
-# Literal Strings
 # Literal Strings
 ## Overview
 In this lab, we demonstrate string literals.
@@ -134,23 +81,8 @@ In this lab, we demonstrate string literals.
 
 1. Override ***ToString*** in the *Employee* class
 1. Return a formatted string containing all important employee information.
-1. Use an interpolated literal string
-
-
-<details>
-<summary>Need a hint?</summary>
-
-```csharp
-public override string ToString()
-{
-    return $"""
-        An Employee, {LastName}, {FirstName} with a Salary of {Salary:c}
-        has made {YtdGrossPay:c}.  {FirstName} was hired on {HireDate:D}
-        """;
-}
-```
-
-</details># Tuples
+1. Use an interpolated literal string# Tuples
+---
 # Tuples
 ## Overview
 This independent lab demonstrates various tuple features.
@@ -196,9 +128,6 @@ This lab demonstrates the **record** type specifier.
 
 Building on the *Tuples* lab, define a single record type to use for the 
 result of each temperature conversion function.
-
-```public record Temperature(double Fahrenheit, double Celsius, double Kelvin);```
-
 # Deconstruction
 ## Overview
 In this lab, add deconstructors to the *Employee* class.
@@ -210,7 +139,7 @@ In this lab, add deconstructors to the *Employee* class.
 | Time to complete | 30 minutes
 
 
-### Steps
+## Steps
 1. Add the following deconstructors to the *Employee* class.
 
 ```c#
@@ -220,11 +149,7 @@ public void Deconstruct(out string FirstName, out string LastName,
             out double Salary, 
             out double YtdGross, out DateTime HireDate)
 ```
-2. Update *Program.cs* to verify the deconstructors
-
----
-# xUnit
-# xUnit Intro
+2. Update *Program.cs* to verify the deconstructors# xUnit Intro
 ## Overview
 In this lab, we get started with xUnit.  
 Using TDD process, we will define some new capabilities in the *Employee* class.
@@ -253,7 +178,7 @@ has been employed
 	base salary
 	- Create the test first!  For this scenario, a **Theory** is probably the best choice.
  
-```csharp
+```cs\#
 [Theory]
 [InlineData(6, 100.0, 94.2)]
 [InlineData(0, 100.0, 92.35)]
@@ -262,7 +187,6 @@ public void TestPay(int tenure, double sal, double pay)
 {
 ```
 
-# Exceptions
 # Exceptions
 ## Overview
 In this lab, we will specify boundaries on the Employee properties and behaviors 
@@ -283,8 +207,7 @@ by specifying expected exceptions.  This lab builds on the xUnit lab.
     - An employee's salary must be between 50 and 500 inclusive
     - An employee's hire date must be in the past
 1. Run the test to verify failure
-1. Modify *Employee* to satisfy the tests# Generics
-# Generics Exercise
+1. Modify *Employee* to satisfy the tests# Generics Exercise
 ## Overview
 In this code exercise, you will convert a regular class into a generic.
 
@@ -304,7 +227,6 @@ In this code exercise, you will convert a regular class into a generic.
 1. Convert the class to a generic by lifting the object type from the class, replacing with a generic parameter
 1. Update the test class to utilize the generic
 1. Re-run tests# Delegates
-# Delegates
 
 | | |
 | --------- | --------------------------- |
@@ -328,7 +250,7 @@ Here's what you need to do for this lab:
 - Add a delegate definition to Employee.cs that returns a double and accepts a double as an argument
 - Add a property to Employee.cs named LocalTaxMethod that is of the delegate type
 - In Pay(amt), modify so that if there is a LocalTaxMethod, it is called and its result is added to the tax
-```csharp
+```c#
 [Fact]
 public void NullLocalTaxTest()
 {
@@ -360,7 +282,6 @@ public void LocalTaxAddedTest()
 
 
 # Events
-# Events
 
 ## Overview
 In this lab, we will add an event to the Employee class. This lab builds on the *Delegate* lab.
@@ -381,7 +302,6 @@ In this lab, we will add an event to the Employee class. This lab builds on the 
 
 
 # Lambda
-# Lambda
 ## Overview
 Convert private delegate methods into lambdas.
 
@@ -395,8 +315,7 @@ Convert private delegate methods into lambdas.
 
 ## Steps
 - Replace the private methods/variables in the *EmployeeTest* with
-lambda expressions.# Mocking with Moq
-# Moq
+lambda expressions.# Moq
 ## Overview
 We will create
 a class to represent *Company* and use mocks to decouple
@@ -429,7 +348,7 @@ employees from the company for testing.
 ---
 
 The initial *Company* class is shown below:
-```csharp
+```c#
 public class Company
 {
     public Company(string name, string taxId)
@@ -451,15 +370,8 @@ public class Company
 }
 ```
 # Inheritance
-# Inheritance
 In this lab, we will expand the types of people that can be hired, including
 contractors and interns.
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | Inheritance |
-| Builds On | MoqLab |
-| Time to complete | 45 minutes
-
 ## Builds On - Moqlab
 
 ## Overview
@@ -490,16 +402,9 @@ contractors and interns.
 1. Update *Company* to contain *HumanResource* objects
 
 # Interfaces
-# Interfaces
 In this lab, we eliminate the fat-interface smell with *Company*'s dependency on *HumanResource*.
 We will also implement the [ *Composite Pattern* ](https://en.wikipedia.org/wiki/Composite_pattern)
-
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | Interface |
-| Builds On | Inheritance |
-| Time to complete | 30 minutes
-
+## Builds On - Inheritance
 ## Overview
 Determine *Company*'s dependency and design an interface that contains the exact methods/properties 
 required by company.  Replace *Company*'s dependency on *HumanResource* with the new interface type.
@@ -517,15 +422,8 @@ Also, we will allow companies to be nested within companies.
 The composite pattern is an elegant pattern that will greatly increase the functionality
 of our application.  How can we adjust the design so that companies can
 contain companies?# Extension Methods
-# Extension Methods
 In this lab, we create an extension to the string class.
-
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | ExtensionMethods |
-| Builds On | Interfaces |
- Time to complete | 30 minutes
-
+## Builds On - Interfaces
 ## Overview
 The **Java** string class has a cool method named **Matches**
 This method takes a regular expression as a parameter and returns a true
@@ -544,14 +442,7 @@ Return true if this string matches the regex or false if it doesn't
 Update the validation methods in *HumanResource* to use the extension method.
 
 # LInQ API
-# LInQ API
 In this lab, we will experiment with Linq queries on a database of movies.
-
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | LinqApi |
-| Builds On | None |
-| Time to complete | 30 minutes
 
 ## Overview
 The project contains a file *MoviesJson.txt* that contains JSON encoded movie data.  
@@ -571,38 +462,26 @@ In the top-level statements (*Program.cs*) experiment with queries
 - etc...
 
 
-# LInQ Query
 # Linq Query
 Modify your code from the previous lab to use Linq Query
-
-
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | LinqQuery |
-| Builds On | LingApi |
-| Time to complete | 15 minutes# Attributes & Reflection
+## Builds on Linq API
 # Attributes & Reflection
 In this lab, we will define an attribute and create a tool that extracts information from assemblies
 
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | Reflection |
-| Builds On | None |
-| Time to complete | 30 minutes
-
-1. Create a new Console Applicaton named *Reflection* (or add this project to your solution)
+## Creates a new Console Application
 
 ### Documenter
 - Create a new class named AuthorAttribute - inherits from Attribute
     - Define a constructor parameter accepting a string argument
 ---
-- Create a class named *AuthorDocumentor* that loads the an assembly 
+ - Create a console application named *Documentor*
+ - Create a class named *AuthorDocumentor* that loads the an assembly 
  and searches for classes attributed with the [Author] attribute.
-- Display the name of the class and the author
+ - Display the name of the class and the author
 
 Here is a hint of the documentor class:
 
-```csharp
+```c#
 public class AuthorDocumenter
 {
     public AuthorDocumenter(string assemblyPath)
@@ -631,17 +510,8 @@ public class AuthorDocumenter
 
 Run the documenter, passing the assembly name of the project containing attributes.
 # Collections
-# Collections
 In this lab, we will replace our *GenericArrayList*
 with a standard library class.
-
-
-| | |
-| --------- | --------------------------- |
-| Exercise Folder | Collections |
-| Builds On | ExtensionMethods |
- Time to complete | 30 minutes
-
 
 ## Part 1
 - Delete the source file *GenericArrayList*.  Good riddance!

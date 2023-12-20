@@ -92,6 +92,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFPayrollViewsSolution", "Solutions\EFPayrollViewsSolution\EFPayrollViewsSolution.csproj", "{0D8F70C9-ECBC-446C-AA19-F1BF6748D95F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7D0C427-D51D-42FF-B4F0-6AFE0A0017C5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nullable", "Labs\Nullable\Nullable.csproj", "{2789B744-7FB9-4AA2-9DC8-05785E39B092}"
 EndProject
