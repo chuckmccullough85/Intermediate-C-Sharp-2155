@@ -1,0 +1,24 @@
+﻿@model CompanyModel
+@{
+    ViewBag.Title = "Company Details";
+}
+
+<h1>Company Detail @Model.Name</h1>
+
+<form action="/Company/SaveDetail/@Model.Id" method="post">
+    <label asp-for="TaxId"></label>
+    <input asp-for="TaxId" />
+    <span asp-validation-for="TaxId"></span>
+    <br />
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Address"></label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+
+    <input type="submit" value="Save" />
+    <a class="btn btn-secondary" asp-action="ManageResources" asp-route-id="@Model.Id">Manage Resources</a>
+
+</form>

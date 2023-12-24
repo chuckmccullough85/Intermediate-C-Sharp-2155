@@ -1,0 +1,33 @@
+﻿@model ManageResourcesModel
+@{
+    ViewBag.Title = "Manage Resources";
+}
+<h1>Manage Resources for @Model.CompanyName</h1>
+
+<form asp-controller="Company">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5">
+                <div>
+                    <label>Available Resources</label>
+                    <select 
+                        asp-items="@Model.UnEmployedList" asp-for="SelectedUnEmployedId" 
+                        class="form-select" size="10">
+                    </select>
+                </div>
+            </div>
+            <div class="col-2">
+                <input type="submit" asp-action="hire" asp-route-id="@Model.CompanyId" value="Hire" />
+                <input type="submit" asp-action="terminate" asp-route-id="@Model.CompanyId" value="Terminate" />
+            </div>
+            <div class="col-5">
+                <label>Employed Resources</label>
+                <select asp-items="@Model.EmployedList" asp-for="SelectedEmployedId" 
+                        class="form-select" size="10">
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+

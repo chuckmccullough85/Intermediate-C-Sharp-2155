@@ -1,4 +1,4 @@
-﻿# Collections
+﻿## Overview
 In this lab, we will replace our *GenericArrayList*
 with a standard library class.
 

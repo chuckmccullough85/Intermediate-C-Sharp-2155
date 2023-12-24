@@ -19,12 +19,12 @@
 1. [LInQ Query](LinqQuery)
 1. [Attributes & Reflection](Reflection)
 1. [Collections](Collections)
-1. Entity Framework
-	1. [Persisting Payroll with EF]
+1. [Entity Framework](EFPayroll)
 1. ASP.Net MVC
-    1. [Company View Mockups]
-	1. [Dynamic Views]
-	1. [Controller - Form Submission]
-	1. [Models]
-	1. [DI]
+    1. [Get Started Demo](AspInitial)
+	1. [Company View Mockups](Views)
+	1. [Dynamic Views](DynamicViews)
+	1. [Handle Form Submit](FormSubmit)
+	1. [Models](Models)
+	1. [DI](DI)
 1. Threads/Tasks/Async

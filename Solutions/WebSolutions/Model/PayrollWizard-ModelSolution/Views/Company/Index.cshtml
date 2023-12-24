@@ -1,0 +1,15 @@
+﻿@model IEnumerable<IdNamePair>
+
+@{
+    ViewBag.Title = "Company Home";
+}
+
+<h1>Hello Company!</h1>
+
+<ul>
+    @foreach (EFPayroll.IdNamePair c in Model)
+    {
+        <li><a href="/company/detail/@c.Id">@c.Name</a></li>
+    }
+</ul>
+

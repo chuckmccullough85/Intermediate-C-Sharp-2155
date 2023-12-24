@@ -1,0 +1,20 @@
+﻿
+@{
+}
+
+<h1>Company Detail</h1>
+
+<form action="/Company/SaveDetail/@ViewBag.id" method="post">
+    <label for="TaxId">Tax Id</label>
+    <input name="TaxId" type="text" value="@ViewBag.taxId" />
+<br />
+    <label for="Name">Name</label>
+    <input name="Name" type="text" value="@ViewBag.name" />
+<br/>
+    <label for="Address">Address</label>
+    <input name="Address" type="text" value="@ViewBag.address" />
+
+    <input type="submit" value="Save"/>
+    <a href="/company/ManageResources">Manage Resources</a>
+
+</form>

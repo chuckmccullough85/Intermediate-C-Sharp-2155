@@ -1,9 +1,16 @@
+## Overview
 Let's create some views!
+
+| | |
+| --------- | --------------------------- |
+| Exercise Folder | Views |
+| Builds On | AspInitial |
+ Time to complete | 45 minutes
+
 
 ## _Layout
 - open *Views/Shared/+Layout.cshtml*
-    - change the default application name on the page to
-    the name you chose for your application
+    - change the default application name on the page to the name you chose for your application
     - change the copyright static year in the footer to
     `@DateTime.Today.Year`
     - Add links in the header for *Company* and *Employee*
@@ -35,3 +42,8 @@ Display 2 buttons, hire and terminate.  They should link to Hire and Terminate a
 
 ### CompanyController
 Define CompanyController actions to provide the navigation
+
+- Index - click on a link to go to the detail page
+- Detail Manage Resources - click on a button to go to the resources page
+- Detail - click on save to go to the save action then back to index
+- ManageResources - Hire and Terminate buttons stay on the same page via hire and terminate action methods

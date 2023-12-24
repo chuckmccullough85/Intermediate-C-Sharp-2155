@@ -12,26 +12,30 @@ In this lab, we will modify our payroll system to support the database.
 Add these packages to your project via NuGet
 - Microsoft.EntityFrameworkCore
 - Microsoft.EntityFrameworkCore.SqlServer
-- Microsoft.EntityFrameworkCore.Tools (optional)
 - Microsoft.EntityFrameworkCore.Proxies
 
 ## Model Updates
 Entity framework doesn't do well with interface type properties.
-Rename *IPayable* to *Payable* 
+Rename *IPayable* to *Payable* (use the rename tool)
 - change from interface to abstract class
 - change Pay to public abstract
-- add an *Id* property
+- add an *Id* auto property (int)
 
 ### Company
 - add default ctor
-- add **[NotMapped]** to Tenure
 - change the IEnumerable Resources to virtual ICollection {get;set;}
+- remove the resources field
+- update any references to *resources* to *Resources*
+- add **override** to Pay()
 
 ### HumanResource
+- add default ctor
 - remove *Pay()*
+- add **[NotMapped]** to Tenure
+
 
 ### Employee
-- LocalTaxFunc not mapped
+- add **[NotMapped]** to LocalTaxFunc
 - add default ctor
 
 ### Contractor & Intern
@@ -46,8 +50,6 @@ Rename *IPayable* to *Payable*
 - Create a database in *Sql Server Object Explorer*
 - Copy the connection string into db context
 
-- create migration
-- update database
 
 ```csharp
 public class PayDbContext : DbContext
@@ -76,8 +78,11 @@ public class PayDbContext : DbContext
 
 
 ### CompanyDbTest
-Add a new class for testing the database.
-See below for a simple test class.
+- Add a new class for testing the database.
+- See below for a simple test class.
+- Run the *GetAllCompanies* test to generate a database and verify the EF mappings
+- Notice the database schema in *SQL Server Object Explorer*
+
 
 ```csharp
 public class CompanyDbTest : IDisposable
@@ -101,17 +106,52 @@ public class CompanyDbTest : IDisposable
     {
         ctx.Dispose();
     }
-    public static void Seed(PayDbContext ctx)
+    private static void Seed(PayDbContext ctx)
     {
-        Company c1 = new Company("Acme", "12-3456");
-        Employee e1 = new Employee("Hank", "Hill", 200, DateTime.Today.AddYears(-10));
-        Contractor ctr = new Contractor("Peggy", "Hill", 50, DateTime.Parse("2005-10-31"));
-        Intern intern = new Intern("Luann", "Platter", DateTime.Today.AddMonths(-18));
+        Company c1 = new ("Strickland Propane", "12-3456");
+        Company c2 = new ("Arlen Public Library", "98-7654");
+        Employee e1 = new ("Hank", "Hill", 200, DateTime.Today.AddYears(-10));
+        Contractor ctr = new ("Peggy", "Hill", 50, DateTime.Parse("2005-10-31"));
+        Intern intern = new ("Luann", "Platter", DateTime.Today.AddMonths(-18));
         c1.Hire(e1);
         c1.Hire(ctr);
-        c1.Hire(intern);
+        c2.Hire(intern);
         ctx.Companies.Add(c1);
+        ctx.Companies.Add(c2);
         ctx.SaveChanges();
     }
+
+}
+```
+
+
+### Configuring Mappings
+
+We can configure the mappings in the *OnModelCreating* method of the *DbContext*.
+
+- Override the *OnModelCreating* method in *PayDbContext*.
+- Using the parameter (modelBilder), configure mappings to map the entities to separate tables
+    -  Use *Entity<T>()* to select the entity and *ToTable()* to specify the table name
+    - Use *Ignore()* to ignore properties that are not mapped to the database
+
+Re-run the db test to re-create the database and verify the mappings.
+
+```chsarp
+override protected void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Company>()
+        .ToTable("Company");
+
+    modelBuilder.Entity<Employee>()
+        .ToTable("Employee")
+        .Ignore(e => e.LocalTaxMethod);
+           
+    modelBuilder.Entity<Contractor>()
+        .ToTable("Contractor");
+
+    modelBuilder.Entity<Intern>()
+        .ToTable("Intern");
+    modelBuilder.Entity<HumanResource>()
+        .Ignore(e => e.Tenure);
 }
 ```

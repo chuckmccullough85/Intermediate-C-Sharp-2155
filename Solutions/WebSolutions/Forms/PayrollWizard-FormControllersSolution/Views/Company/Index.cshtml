@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Company Home";
+}
+
+<h1>Hello Company!</h1>
+
+<ul>
+    @foreach (EFPayroll.IdNamePair c in ViewBag.companies)
+    {
+        <li><a href="/company/detail/@c.Id">@c.Name</a></li>
+    }
+</ul>
+
