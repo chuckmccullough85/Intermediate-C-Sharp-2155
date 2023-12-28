@@ -27,3 +27,4 @@ public class DirectoryWatcher
             Console.WriteLine("\n---------------------\n");
         }
     }
+}

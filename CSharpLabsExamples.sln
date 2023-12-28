@@ -113,7 +113,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspInitial", "AspInitial", 
 		Labs\AspInitial\Readme.md = Labs\AspInitial\Readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollWizard-ViewsSolution", "Solutions\WebSolutions\Views\PayrollWizard-ViewsSolution\PayrollWizard-ViewsSolution.csproj", "{FA726BA1-6550-45C6-A0E6-34AAF67219F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayrollWizard-ViewsSolution", "Solutions\WebSolutions\Views\PayrollWizard-ViewsSolution\PayrollWizard-ViewsSolution.csproj", "{FA726BA1-6550-45C6-A0E6-34AAF67219F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicViews", "DynamicViews", "{CD1C56AF-D364-48D6-9C5B-7E3990650060}"
 	ProjectSection(SolutionItems) = preProject
@@ -161,9 +161,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{17704D89
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{F61D0BC3-2D33-43AE-AF2C-49072B3E6E9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTask", "Labs\MultiTask\MultiTask.csproj", "{C15396D3-1F1B-40C1-BA01-A4B59132321C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTask", "Labs\MultiTask\MultiTask.csproj", "{C15396D3-1F1B-40C1-BA01-A4B59132321C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTaskSolution", "Solutions\MultiTaskSolution\MultiTaskSolution.csproj", "{1BDEFAC4-0E7D-40EA-9299-8865C85C6A7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks", "Labs\Tasks\Tasks.csproj", "{CD94D133-6116-456F-AEBD-396BCD09E3A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksSolution", "Solutions\TasksSolution\TasksSolution.csproj", "{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -387,6 +391,14 @@ Global
 		{1BDEFAC4-0E7D-40EA-9299-8865C85C6A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BDEFAC4-0E7D-40EA-9299-8865C85C6A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BDEFAC4-0E7D-40EA-9299-8865C85C6A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD94D133-6116-456F-AEBD-396BCD09E3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD94D133-6116-456F-AEBD-396BCD09E3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD94D133-6116-456F-AEBD-396BCD09E3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD94D133-6116-456F-AEBD-396BCD09E3A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,6 +469,8 @@ Global
 		{F61D0BC3-2D33-43AE-AF2C-49072B3E6E9B} = {A80E9C29-241B-4A49-8E46-FDA437EFC28B}
 		{C15396D3-1F1B-40C1-BA01-A4B59132321C} = {E4524B8C-5F05-4A5F-A9C0-71024C8B077D}
 		{1BDEFAC4-0E7D-40EA-9299-8865C85C6A7B} = {E4DD3CDA-A182-4F3D-94E7-E52E9C0F0F3E}
+		{CD94D133-6116-456F-AEBD-396BCD09E3A2} = {E4524B8C-5F05-4A5F-A9C0-71024C8B077D}
+		{CEB7DCE7-1DF8-4E9C-B28E-55C7008AA401} = {E4DD3CDA-A182-4F3D-94E7-E52E9C0F0F3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42BCB368-D58E-479C-A312-556E316CE8CE}
