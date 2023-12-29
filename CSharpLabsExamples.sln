@@ -156,8 +156,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicViews", "DynamicViews", "{2B89F6BC-2C30-47EA-A005-41328EB16EE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{BA0B5786-F671-469E-8A53-59CF72EC5738}"
+	ProjectSection(SolutionItems) = preProject
+		Solutions\WebSolutions\DynamicViews\PayrollWizard-DynamicViewsSolution\libman.json = Solutions\WebSolutions\DynamicViews\PayrollWizard-DynamicViewsSolution\libman.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{17704D89-9465-4088-88CF-455C39F64D4F}"
+	ProjectSection(SolutionItems) = preProject
+		Solutions\WebSolutions\DynamicViews\PayrollWizard-DynamicViewsSolution\libman.json = Solutions\WebSolutions\DynamicViews\PayrollWizard-DynamicViewsSolution\libman.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{F61D0BC3-2D33-43AE-AF2C-49072B3E6E9B}"
 EndProject

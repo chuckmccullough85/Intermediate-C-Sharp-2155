@@ -1,5 +1,4 @@
-﻿# Tuples
-## Overview
+﻿## Overview
 This independent lab demonstrates various tuple features.
 
 | | |

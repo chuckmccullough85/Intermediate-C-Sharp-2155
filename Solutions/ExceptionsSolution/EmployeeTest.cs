@@ -35,6 +35,19 @@ namespace xUnitIntroSolution
             Assert.Throws<ArgumentOutOfRangeException>(
                     () => new Employee("Hank", "Hill", -50, DateTime.Today));
         }
+
+        [Fact]
+        public void TestEmployeeBadSalary2() 
+        {
+            try {
+                new Employee("Hank", "Hill", -50, DateTime.Today);
+                Assert.True(false, "Should have thrown an exception");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+            }
+        }
+
         [Fact]
         public void TestEmployeeFutureHire()
         {

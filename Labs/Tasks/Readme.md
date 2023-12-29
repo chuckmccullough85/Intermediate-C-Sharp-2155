@@ -1,4 +1,6 @@
-﻿In this exercise, we will scan websites looking for keywords.  Our scanner provides 2 properties to hold the keywords and the urls to scan.
+﻿## Overview
+
+In this exercise, we will scan websites looking for keywords.  Our scanner provides 2 properties to hold the keywords and the urls to scan.
 The code below contains synchronous execution. 
 
 | | |

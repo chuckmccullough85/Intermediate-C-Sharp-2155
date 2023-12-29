@@ -1,4 +1,4 @@
-﻿# LInQ API
+﻿## Overview
 In this lab, we will experiment with Linq queries on a database of movies.
 
 | | |
@@ -7,7 +7,6 @@ In this lab, we will experiment with Linq queries on a database of movies.
 | Builds On | None |
 | Time to complete | 30 minutes
 
-## Overview
 The project contains a file *MoviesJson.txt* that contains JSON encoded movie data.  
 Each line in the file contains a movie title, genre, year, rating, and cast.
 Review the file *MovieDb.cs*.  This class deserializes the data into a list of *Movie* objects.
@@ -15,6 +14,8 @@ Review the file *MovieDb.cs*.  This class deserializes the data into a list of *
 the output folder so that it is in the same directory as the application .exe.
 
 ## Lab
+Add this project to your solution.
+
 In the top-level statements (*Program.cs*) experiment with queries
 
 - How many movies did your favorite movie star appear in?

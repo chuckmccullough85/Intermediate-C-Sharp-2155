@@ -1,26 +1,30 @@
-﻿# Extension Methods
+﻿## Overview
 In this lab, we create an extension to the string class.
 
 | | |
 | --------- | --------------------------- |
 | Exercise Folder | ExtensionMethods |
-| Builds On | Interfaces |
+| Builds On | [Interfaces](../Interfaces) |
  Time to complete | 30 minutes
 
-## Overview
+## Requirements
 The **Java** string class has a cool method named **Matches**
-This method takes a regular expression as a parameter and returns a true
-if the string matches the expression and false if it doesn't.
+This method takes a regular expression as a parameter and returns a true if the string matches the expression and false if it doesn't.
 
-Let's take that a step further and add a method to the string class
-to *Validate* a string with a regular expression.
+Let's take that a step further and add a method to the string class to *Validate* a string with a regular expression.
 
-Add a class to the *Interfaces* project named *Extensions*.  Change the
-class to ` public static `
-Define a static bool extension method named *Validate*.  The first **this** argument
-is a string (extending string class) and the second is a regular expression.
-If the string doesn't start with a ^ and/or end with a $, add them.
-Return true if this string matches the regex or false if it doesn't
+### Steps
 
-Update the validation methods in *HumanResource* to use the extension method.
+- Add a class to the *Interfaces* project named *Extensions*.  Change the class to ` public static `
+- Add these methods to the class:
+
+```csharp
+public static bool IsValid (this string text, string expression)
+public static void Validate<E>(this string text, string expression, string error="invalid") where E : Exception, new()
+public static void Validate(this string text, string expression, string error = "invalid")
+```
+
+- The first method, `IsValid` should return true if the string matches the expression and false if it doesn't.
+- The second method, `Validate` should throw an exception of type `E` if the string does not match the expression.  The exception should have the message passed in as the `error` parameter.  This method can call the first method to do the actual validation.
+- The third method, `Validate` should throw an exception of type `ArgumentException` if the string does not match the expression.  The exception should have the message passed in as the `error` parameter.  This method can call the second method.
 

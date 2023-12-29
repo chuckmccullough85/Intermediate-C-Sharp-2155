@@ -1,10 +1,10 @@
-﻿# Persisting Payroll
+﻿## Overview
 In this lab, we will modify our payroll system to support the database.
 
 | | |
 | --------- | --------------------------- |
 | Exercise Folder | EFPayroll |
-| Builds On | Collections |
+| Builds On | [Collections](../Collections) |
  Time to complete | 60 minutes
 
 

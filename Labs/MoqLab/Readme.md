@@ -1,5 +1,4 @@
-﻿# Moq
-## Overview
+﻿## Overview
 We will create
 a class to represent *Company* and use mocks to decouple
 employees from the company for testing.
@@ -7,10 +6,11 @@ employees from the company for testing.
 | | |
 | --------- | --------------------------- |
 | Exercise Folder | MoqLab |
-| Builds On | Lambda |
+| Builds On | [Lambda](../Lambda) |
 | Time to complete | 30 minutes
 
 ## Steps
+
 1. Continue with your last project
     - copy source files from the generic project if needed
 
@@ -28,9 +28,12 @@ employees from the company for testing.
     - *TestCompanyPay* create a test to hire and pay employees - verify that they are paid
     - Verify that the tests fail
 1. Implement *Company* so that tests pass
+
+
 ---
 
 The initial *Company* class is shown below:
+
 ```csharp
 public class Company
 {

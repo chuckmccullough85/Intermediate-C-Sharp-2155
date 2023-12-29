@@ -1,5 +1,4 @@
-﻿# Literal Strings
-## Overview
+﻿## Overview
 In this lab, we demonstrate string literals.
 
 | | |
@@ -11,21 +10,17 @@ In this lab, we demonstrate string literals.
 ---
 
 1. Override ***ToString*** in the *Employee* class
+    1. start typing ***override*** and select ***ToString*** from the list
 1. Return a formatted string containing all important employee information.
 1. Use an interpolated literal string
+1. In the *Main* method (or top-level code), you can demonstrate **ToString** by calling it explicitly or by simply passing an employee to **Console.WriteLine**.
 
-
-<details>
-<summary>Need a hint?</summary>
-
+*For Example:*
 ```csharp
-public override string ToString()
-{
-    return $"""
-        An Employee, {LastName}, {FirstName} with a Salary of {Salary:c}
-        has made {YtdGrossPay:c}.  {FirstName} was hired on {HireDate:D}
-        """;
-}
+Employee e = new("Hank", "Hill", 200, DateTime.Today);
+Console.WriteLine(e);  // implicit call to ToString
 ```
 
-</details>
+
+
+

@@ -1,15 +1,15 @@
-﻿# Inheritance
-In this lab, we will expand the types of people that can be hired, including
-contractors and interns.
+﻿## Overview
+In this lab, we will expand the types of people that can be hired, including contractors and interns.
+
 | | |
 | --------- | --------------------------- |
 | Exercise Folder | Inheritance |
 | Builds On | MoqLab |
 | Time to complete | 45 minutes
 
-## Builds On - Moqlab
 
-## Overview
+## Requirements
+
 - Define new classes
     - *Contractor* - contractors make a fixed rate X 50 hours
     - *Intern* - interns are always paid a stipend of $50
@@ -18,6 +18,7 @@ contractors and interns.
 - Update Company to contain *Human Resource* objects
 
 ## Steps
+
 1. Create new classes, *HumanResource, Company, Intern*
 1. Change *Employee* to inherit from *HumanResource*
 1. Pull up from *Employee* to *HumanResource* the common fields and properties

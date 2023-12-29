@@ -1,9 +1,10 @@
-﻿# Delegates
+﻿## Overview
+This lab is designed to give you experience with delegates.
 
 | | |
 | --------- | --------------------------- |
 | Exercise Folder | Delegates |
-| Builds On | Exceptions |
+| Builds On | [Exceptions](Exceptions) |
 | Time to complete | 30 minutes
 
 
@@ -17,11 +18,13 @@ In order to handle this scenario, the designer decided to add a delegate to the 
 The signature of the delegate is `double func(double amt)`.  The gross amount being paid is passed in and the local tax is returned.
 
 Here's what you need to do for this lab:
-- Use this project as a starting point, or build on *Exceptions*
 - Add the tests below to EmployeeTest
 - Add a delegate definition to Employee.cs that returns a double and accepts a double as an argument
 - Add a property to Employee.cs named LocalTaxMethod that is of the delegate type
 - In Pay(amt), modify so that if there is a LocalTaxMethod, it is called and its result is added to the tax
+
+### Tests
+
 ```csharp
 [Fact]
 public void NullLocalTaxTest()
