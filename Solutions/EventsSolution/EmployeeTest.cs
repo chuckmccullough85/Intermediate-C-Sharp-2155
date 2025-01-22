@@ -54,12 +54,12 @@ namespace EventTest
         }
 
         private bool ecalled=false;
-        private Employee evtemp;
+        private Employee? evtemp;
         private void ehandler (Employee e, double amt)
         {
             ecalled = true;
-            Assert.Same(evtemp, e);
-            Assert.True(evtemp.Salary > amt);
+            Assert.Same(evtemp!, e);
+            Assert.True(evtemp!.Salary > amt);
         }
         [Fact]
         public void PayEventTest()

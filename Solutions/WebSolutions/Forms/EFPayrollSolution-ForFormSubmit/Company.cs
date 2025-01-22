@@ -12,9 +12,9 @@ public class Company : Payable
         Address = "";
     }
 
-    public string Name { get; set; }
-    public string TaxId { get; set; }
-    public string Address { get; set; } 
+    public string Name { get; set; } = "";
+    public string TaxId { get; set; } = "";
+    public string Address { get; set; }  = "";
 
     public virtual ICollection<Payable> Resources {get;set;} = new HashSet<Payable>();
     public void Hire(Payable emp)

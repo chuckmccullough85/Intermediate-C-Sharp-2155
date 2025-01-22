@@ -8,7 +8,7 @@ namespace EFPayroll
     {
         public delegate double LocalTaxFunc(double amt);
         public delegate void NotifyPay(Employee emp, double net);
-        public event NotifyPay OnPay;
+        public event NotifyPay? OnPay;
 
         private const double TAX_RATE = .0765;
         private double salary = 0;

@@ -10,8 +10,8 @@
             TaxId = taxId;
         }
 
-        public string Name { get; set; }
-        public string TaxId { get; set; }
+        public string Name { get; set; } = "";
+        public string TaxId { get; set; } = "";
         public virtual ICollection<Payable> Resources 
             {get;set;} = new HashSet<Payable>();
         public void Hire(Payable emp)

@@ -9,10 +9,10 @@ namespace EFPayroll
         public PayDbContext(DbContextOptions<PayDbContext> opt)
             : base(opt) { }
 
-        public DbSet<Company> Companies { get; set;}
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Contractor> Contractors { get; set; }
-        public DbSet<Intern> Interns => Set<Intern>();
+        public DbSet<Company> Companies { get; set;} = null!;
+        public DbSet<Employee> Employees { get; set; } = null!;
+        public DbSet<Contractor> Contractors { get; set; } = null!;
+        public DbSet<Intern> Interns => Set<Intern>(); 
 
         protected override void OnConfiguring(DbContextOptionsBuilder opts)
         {

@@ -25,7 +25,7 @@ namespace EFPayroll
         {
             ctx.Dispose();
         }
-        public static void Seed(PayDbContext ctx)
+        static void Seed(PayDbContext ctx)
         {
             Company c1 = new Company("Acme", "12-3456");
             Employee e1 = new Employee("Hank", "Hill", 200, DateTime.Today.AddYears(-10));
