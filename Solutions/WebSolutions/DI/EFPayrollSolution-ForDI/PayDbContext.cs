@@ -12,10 +12,7 @@ public class PayDbContext : DbContext
 
     override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("""
-            Server=(localdb)\mssqllocaldb;Database=Payroll;
-            Trusted_Connection=True;
-            """);
+        optionsBuilder.UseSqlite("Data Source=payroll.dat");
         optionsBuilder.UseLazyLoadingProxies();
     }
 

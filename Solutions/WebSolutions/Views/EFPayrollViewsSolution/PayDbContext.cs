@@ -18,11 +18,7 @@ namespace EFPayroll
         {
             if (!opts.IsConfigured)
             {
-                opts.UseSqlServer(@"Data Source=(localdb)\ProjectModels;
-                    Initial Catalog=PayDb2;Integrated Security=True;
-                    Connect Timeout=30;Encrypt=False;
-                    TrustServerCertificate=False;
-                    ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+                opts.UseSqlite(@"Data Source=payroll.dat")
                     .UseLazyLoadingProxies();
             }
             base.OnConfiguring(opts);

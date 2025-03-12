@@ -5,16 +5,14 @@ namespace EFPayroll;
 public class PayDbContext : DbContext
 {
     public DbSet<Company> Companies { get; set; }
+    public DbSet<HumanResource> Resources { get; set; }
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Contractor> Contractors { get; set; }
     public DbSet<Intern> Interns { get; set; }
 
     override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("""
-            Server=(localdb)\mssqllocaldb;Database=Payroll;
-            Trusted_Connection=True;
-            """);
+        optionsBuilder.UseSqlite("Data Source=payroll.dat");
         optionsBuilder.UseLazyLoadingProxies();
     }
 
